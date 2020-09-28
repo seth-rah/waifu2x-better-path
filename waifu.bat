@@ -23,7 +23,7 @@ IF "%fileextension%"=="" (GOTO TESTEXTENSION) ELSE (GOTO CHECKEXIST)
 IF EXIST "%filedrive%%filepath%%filename%.jpg" IF EXIST "%filedrive%%filepath%%filename%.png" (GOTO SETEXTENSION)
 IF EXIST "%filedrive%%filepath%%filename%.jpg" (SET fileextension=.jpg)
 IF EXIST "%filedrive%%filepath%%filename%.png" (SET fileextension=.png)
-IF EXIST "%filedrive%%filepath%%filename%.*" (GOTO SETEXTENSION) ELSE (GOTO NOTFOUND)
+IF EXIST "%filedrive%%filepath%%filename%.*" IF "%fileextension%"=="" (GOTO SETEXTENSION)
 GOTO CHECKEXIST
 
 :SETEXTENSION
@@ -35,6 +35,7 @@ SET fileextension=.%fileextension%
 GOTO CHECKEXIST
 
 :CHECKEXIST
+IF NOT EXIST "%filedrive%%filepath%%filename%.*" (GOTO NOTFOUND)
 IF NOT EXIST "%filedrive%%filepath%%filename%%fileextension%" (GOTO EXTNOTFOUND)
 IF EXIST "%filedrive%%filepath%%filename%-waifu%fileextension%" (GOTO EXISTS) ELSE (GOTO WAIFUCHECK)
 
@@ -45,11 +46,9 @@ IF /I "%exists%" NEQ "Y" (GOTO STOPPING) ELSE (GOTO WAIFUCHECK)
 
 :WAIFUCHECK
 IF "%~2"=="" (GOTO WAIFU)
-SET /P args="Provide extra arguments for rescaling. Leave empty for waifu2x-ncnn-vulkan default: "
-GOTO WAIFUARGS
-
-:WAIFUARGS
-ECHO "Free arguments enabled, please add the arguments you wish to enable for this rescaling"
+ECHO.  
+ECHO.
+ECHO "Free arguments enabled"
 ECHO "File output path is set in stone"
 ECHO "  -v                   verbose output"
 ECHO "  -n noise-level       denoise level (-1/0/1/2/3, default=0)"
@@ -60,6 +59,12 @@ ECHO "  -g gpu-id            gpu device to use (default=0) can be 0,1,2 for mult
 ECHO "  -j load:proc:save    thread count for load/proc/save (default=1:2:2) can be 1:2,2,2:2 for multi-gpu"
 ECHO "  -x                   enable tta mode"
 ECHO "  -f format            output image format (jpg/png/webp, default=ext/png)"
+ECHO.  
+ECHO. 
+SET /P args="Provide extra arguments for rescaling. Leave empty for waifu2x-ncnn-vulkan default: "
+GOTO WAIFUARGS
+
+:WAIFUARGS
 @ECHO ON
 waifu2x-ncnn-vulkan -i %filedrive%%filepath%%filename%%fileextension% -o %filedrive%%filepath%%filename%-waifu%fileextension% %args%
 @ECHO OFF
