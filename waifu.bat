@@ -20,10 +20,10 @@ SET fileextension=%%~xi
 IF "%fileextension%"=="" (GOTO TESTEXTENSION) ELSE (GOTO CHECKEXIST)
 
 :TESTEXTENSION
-IF EXIST %filedrive%%filepath%%filename%.jpg IF EXIST %filedrive%%filepath%%filename%.png (GOTO SETEXTENSION)
-IF EXIST %filedrive%%filepath%%filename%.jpg (SET fileextension=.jpg)
-IF EXIST %filedrive%%filepath%%filename%.png (SET fileextension=.png)
-IF EXIST %filedrive%%filepath%%filename% (GOTO SETEXTENSION) ELSE (GOTO NOTFOUND)
+IF EXIST "%filedrive%%filepath%%filename%.jpg" IF EXIST "%filedrive%%filepath%%filename%.png" (GOTO SETEXTENSION)
+IF EXIST "%filedrive%%filepath%%filename%.jpg" (SET fileextension=.jpg)
+IF EXIST "%filedrive%%filepath%%filename%.png" (SET fileextension=.png)
+IF EXIST "%filedrive%%filepath%%filename%.*" (GOTO SETEXTENSION) ELSE (GOTO NOTFOUND)
 GOTO CHECKEXIST
 
 :SETEXTENSION
