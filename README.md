@@ -12,7 +12,7 @@ In short, you will want the "Path" variable to contain the directory of [waifu2x
 
 You should not alter the filenames contained inside that folder as "waifu2x-ncnn-vulkan.exe" is an expected value. 
 
-Once you have configured your path, download and save the following file as (waifu.bat)[https://raw.githubusercontent.com/seth-rah/waifu2x-better-path/master/waifu.bat]. Store the "waifu.bat" file in the same directory as "waifu2x-ncnn-vulkan.exe"
+Once you have configured your path, download and save the following file as [waifu.bat](https://raw.githubusercontent.com/seth-rah/waifu2x-better-path/master/waifu.bat). Store the "waifu.bat" file in the same directory as "waifu2x-ncnn-vulkan.exe"
 
 Lastly, right click the `waifu.bat` file and select properties. At the bottom of the window, if there is a checkbox to unblock the file, select it and click OK to ensure that the file has execution rights.
 
