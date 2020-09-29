@@ -31,7 +31,7 @@ Once everything in the installation is taken care of, you can easily access waif
    * If the file extension is provided with or without a fullstop, the script will handle it appropriately and add it if it was missing.
    * If the filename exists but the extension was provided incorrectly, it will ask you to provide the extension again.
 5. Providing any secondary arguments aside from `extra`, `slow` or `all` after the filename on script launch will give you the ability to freely select the arguments you wish to use. to enable free arguments, use the command as follows `waifu filename args`.
-6. You only need to provide an input filename, the output will store in the same directory as the input file, with a `-waifu` suffixed to the filename. 
+6. You only need to provide an input filename, the output will store in the same directory as the input file, with a `-cunetwaifu` suffixed to the filename. Variations exist depending on model used.
    * If the filename already exists, the script will ask if you wish to overwrite the file that's already there, or to cancel the operation.
    * A future version might request you which filename you'd prefer instead of overwriting, or suffix a value to not conflict with the existing file.
 7. Upscale using cunet, photo and anime methods in one command by appending the expected argument.
