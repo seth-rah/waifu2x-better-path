@@ -65,7 +65,6 @@ IF EXIST "%fileshort%-photowaifu%fileextension%" (SET argsdupeextra=true)
 IF EXIST "%fileshort%-ttacunetwaifu%fileextension%" (SET argsdupeslow=true)
 IF EXIST "%fileshort%-ttaanimewaifu%fileextension%" (SET argsdupeslow=true)
 IF EXIST "%fileshort%-ttaphotowaifu%fileextension%" (SET argsdupeslow=true)
-ECHO %args% and %argsbool% and %argsdupeextra% and %argsdupeslow%
 IF /I "%args%" EQU "extra" IF /I "%argsdupeextra%" EQU "true" (ECHO. & ECHO %COL%[40;91mAny of the following  "%filename%-cunetwaifu%fileextension% / %filename%-animewaifu%fileextension% / %filename%-photowaifu%fileextension%" already exist.%COL%[0m& GOTO EXISTS)
 IF /I "%args%" EQU "slow" IF /I "%argsdupeslow%" EQU "true" (ECHO. & ECHO %COL%[40;91mAny of the following  "%filename%-ttacunetwaifu%fileextension% / %filename%-ttanimewaifu%fileextension% / %filename%-ttaphotowaifu%fileextension%" already exist.%COL%[0m& GOTO EXISTS)
 IF /I "%args%" EQU "all" IF /I "%argsdupeextra%" EQU "true" (ECHO. & ECHO %COL%[40;91mAny of the following  "%filename%-cunetwaifu%fileextension% / %filename%-animewaifu%fileextension% / %filename%-photowaifu%fileextension% / %filename%-ttacunetwaifu%fileextension% / %filename%-ttaanimewaifu%fileextension% / %filename%-ttaphotowaifu%fileextension%" already exist.%COL%[0m& GOTO EXISTS)
