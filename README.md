@@ -38,5 +38,6 @@ Once everything in the installation is taken care of, you can easily access waif
    * Adding `extra` to the 2nd waifu argument will create a `-cunetwaifu`, `-animewaifu` and `-photowaifu` file.
    * Adding `slow` to the 2nd waifu argument will create a `-ttacunetwaifu`, `-ttaanimewaifu` and `-ttaphotowaifu` file. This gets handled the same as `extra`, except the `-x` flag is enabled.
    * Adding `all` to the 2nd waifu argument will create a `-cunetwaifu`, `-animewaifu`, `-photowaifu`, `-ttacunetwaifu`, `-ttaanimewaifu` and `-ttaphotowaifu` file. It handles running `slow` and `extra` logic.
+8. If the output file is just black, and processing still occured, you will have to look into updating your GPU display driver. And if not present, your CPU display driver. Go to your GPU / CPU's support page and download their VGA / Display drivers. If you're working from a laptop, it's best to get this file from your laptop manufacturers support page.
 
 In short, you just need to `shift - rightclick` on an empty space in a folder containing the file you wish to rescale, select `Open PowerShell window here`. Type `waifu filename argument` and you're set. If you don't know the filename, `click drag` the image into the `PowerShell` window instead of typing the filename, or with CMD if that's your cup of tea.
